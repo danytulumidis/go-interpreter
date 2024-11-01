@@ -140,6 +140,15 @@ func (ie *InfixExpression) String() string {
 	return out.String()
 }
 
+type Boolean struct {
+	Token token.Token
+	Value bool
+}
+
+func (b *Boolean) expressionNode()      {}
+func (b *Boolean) TokenLiteral() string { return b.Token.Literal }
+func (b *Boolean) String() string       { return b.Token.Literal }
+
 // Will be the Root node of the AST
 // The AST is a series of Statements
 type Program struct {
