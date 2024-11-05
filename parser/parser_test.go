@@ -324,6 +324,10 @@ func TestOperatorPrecedenceParsing(t *testing.T) {
 			"3 + 4 * 5 == 3 * 1 + 4 * 5",
 			"((3 + (4 * 5)) == ((3 * 1) + (4 * 5)))",
 		},
+		{
+			"(5 + 5) * 2",
+			"((5 + 5) * 2)",
+		},
 	}
 	for _, tt := range tests {
 		l := lexer.New(tt.input)
